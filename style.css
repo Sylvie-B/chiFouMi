@@ -52,6 +52,7 @@ body {
     height: 4vh;
     margin-top: 10px;
     border: 1px solid black;
+    font-size: 1vw;
 }
 
 #game {
@@ -60,7 +61,12 @@ body {
     justify-content: flex-end;
 }
 
-#comptItem, #board, #userItem {
+#info {
+    margin: 2vh auto;
+    font-size: 2vw;
+}
+
+#board, #userItem {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
@@ -82,18 +88,14 @@ body {
     border: 3px solid lightgreen;
 }
 
-#comptItem, #userItem {
+#userItem {
     align-items: center;
     height: 50%;
 }
 
-#comptItem div, #userItem div {
+#userItem div {
     width: 33.3%;
     font-size: 8vw;
-}
-
-#comptItem div {
-    background-color: lightcoral;
 }
 
 #userItem div {
@@ -104,6 +106,7 @@ body {
     width: 20%;
     flex-direction: column;
     align-items: center;
+    font-size: 1vw;
 }
 
 #history {

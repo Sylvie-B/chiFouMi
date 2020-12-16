@@ -1,10 +1,5 @@
-// get buttons
-let stone = document.getElementById('stone');
-let paper = document.getElementById('paper');
-let scissors = document.getElementById('scissors');
-
-//  get the different choices
-let choice = document.getElementById('userItem').getElementsByTagName('div');
+// get all buttons
+let userItem = document.getElementById('userItem').getElementsByTagName('div');
 
 // get display game
 let choiceC = document.getElementById('computerChoice');
@@ -18,35 +13,59 @@ choiceU.style.fontSize = '10vw';
 let point = document.getElementById('point');
 
 // listen buttons   // random // test // info
-stone.addEventListener('click', function (){
-    choiceU.innerHTML = stone.innerHTML;
-    randomChoice(stone);
-});
-
-paper.addEventListener('click', function (){
-    choiceU.innerHTML = paper.innerHTML;
-    randomChoice(paper);
-});
-
-scissors.addEventListener('click', function (){
-    choiceU.innerHTML = paper.innerHTML;
-    randomChoice(scissors);
-})
-
-// function : randon choice computer
-function randomChoice (item){
-    let x = Math.round(Math.random() * (choice.length-1));
-    choiceC.innerHTML = choice[x].innerHTML;
-    // test
-    if (x === 0)
-        switch (item){
-            case stone :
-                // match null
-                break;
-            case paper :
-                //
-        }
+for(let i = 0 ; i < userItem.length ; i++){
+    userItem[i].addEventListener('click', function (){
+        choiceU.innerHTML = userItem[i].innerHTML;
+        randomChoice(i);
+    });
 
 }
 
+// function : randon choice computer
+function randomChoice (u){
+    let c = Math.round(Math.random() * (userItem.length-1));
+    choiceC.innerHTML = userItem[c].innerHTML;
+    // test
+    if (c === u){
+        // match null
+    }
+    else {
+        switch (c){
+            case 0:
+                switch (u){
+                    case 1:
+                        // user win
+                        winner(who);
+                        break;
+                    case 2:
+                        // computer win
+                        break;
+                }
+                break;
+            case 1:
+                switch (u){
+                    case 0:
+                        // computer win
+                        break;
+                    case 2:
+                        // user win
+                        break;
+                }
+                break;
+            case 2:
+                switch (u){
+                    case 0:
+                        // user win
+                        break;
+                    case 1:
+                        // computer win
+                        break;
+                }
+                break;
+        }
+    }
+}
 
+function winner(who){
+    
+}

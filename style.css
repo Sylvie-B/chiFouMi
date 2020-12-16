@@ -23,6 +23,7 @@ body {
     height: 80vh;
     margin: auto;
     padding: 5vw;
+    background-color: lightcyan;
 }
 
 #sideLeft {
@@ -56,23 +57,47 @@ body {
 #game {
     width: 60%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 }
 
-#board, #choice {
+#comptItem, #board, #userItem {
     width: 100%;
-    height: 30%;
     flex-direction: row;
     justify-content: space-between;
-    background-color: lightblue;
+}
+
+#board {
+    height: 30%;
 }
 
 #computerChoice, #userChoice {
     width: 48%;
 }
 
-#choice div {
-    width: 30%;
+#computerChoice {
+    border: 3px solid lightcoral;
+}
+
+#userChoice {
+    border: 3px solid lightgreen;
+}
+
+#comptItem, #userItem {
+    align-items: center;
+    height: 50%;
+}
+
+#comptItem div, #userItem div {
+    width: 33.3%;
+    font-size: 8vw;
+}
+
+#comptItem div {
+    background-color: lightcoral;
+}
+
+#userItem div {
+    background-color: lightgreen;
 }
 
 #sideRight {

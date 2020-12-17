@@ -44,7 +44,7 @@ function randomChoice (u){
     let histGame = document.createElement('div');
     histGame.style.display = "flex";
     histGame.innerHTML = userItem[c].innerHTML + " " + userItem[u].innerHTML;
-    histDis.appendChild(histGame);
+    histDis.prepend(histGame);
 
     // comptHist.innerHTML =
     // test

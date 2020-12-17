@@ -29,7 +29,12 @@ for(let i = 0 ; i < userItem.length ; i++){
 }
 
 //  listen restart
-
+let restart = document.getElementById('restart');
+restart.addEventListener('click', function (){
+    score = 0;
+    point.innerHTML = score.toString();
+    histDis.innerHTML = "";
+})
 
 // function : randon choice computer
 function randomChoice (u){

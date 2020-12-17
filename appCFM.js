@@ -1,11 +1,9 @@
-// get all buttons
+// get all choices
 let userItem = document.getElementById('userItem').getElementsByTagName('div');
 
 // get display game
 let choiceC = document.getElementById('computerChoice');
-choiceC.style.fontSize = '10vw';
 let choiceU = document.getElementById('userChoice');
-choiceU.style.fontSize = '10vw';
 
 // get display info
 let info = document.getElementById('info');
@@ -18,21 +16,29 @@ let userHist = document.getElementById('userHist');
 let point = document.getElementById('point');
 let score = 0;
 
-// listen buttons   // random // test // info
+// listen buttons   // random & test & point  //  history
 for(let i = 0 ; i < userItem.length ; i++){
     userItem[i].addEventListener('click', function (){
         choiceU.innerHTML = userItem[i].innerHTML;
+        // userHist.innerHTML = userItem[i].innerHTML;
         randomChoice(i);
-        // add point
-
+        // display point
+        point.innerHTML = score.toString();
         // set history
+        let histGame = document.createElement('div');
+
+
     });
 }
+
+//  listen restart
+
 
 // function : randon choice computer
 function randomChoice (u){
     let c = Math.round(Math.random() * (userItem.length-1));
     choiceC.innerHTML = userItem[c].innerHTML;
+    // comptHist.innerHTML = userItem[c].innerHTML;
     // test
     if (c === u){
         info.innerHTML = "Match nul";
@@ -44,6 +50,7 @@ function randomChoice (u){
                     case 1:
                         // user win (c, u, w)
                         info.innerHTML = "Vous avez gagné !!!";
+                        score ++;
                         break;
                     case 2:
                         // computer win
@@ -60,6 +67,7 @@ function randomChoice (u){
                     case 2:
                         // user win
                         info.innerHTML = "Vous avez gagné !!!";
+                        score ++;
                         break;
                 }
                 break;
@@ -68,6 +76,7 @@ function randomChoice (u){
                     case 0:
                         // user win
                         info.innerHTML = "Vous avez gagné !!!";
+                        score ++;
                         break;
                     case 1:
                         // computer win

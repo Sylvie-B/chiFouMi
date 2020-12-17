@@ -16,6 +16,7 @@ let userHist = document.getElementById('userHist');
 
 // get display point
 let point = document.getElementById('point');
+let score = 0;
 
 // listen buttons   // random // test // info
 for(let i = 0 ; i < userItem.length ; i++){
@@ -23,6 +24,7 @@ for(let i = 0 ; i < userItem.length ; i++){
         choiceU.innerHTML = userItem[i].innerHTML;
         randomChoice(i);
         // add point
+
         // set history
     });
 }
@@ -33,7 +35,7 @@ function randomChoice (u){
     choiceC.innerHTML = userItem[c].innerHTML;
     // test
     if (c === u){
-        winner("Match nul");
+        info.innerHTML = "Match nul";
     }
     else {
         switch (c){

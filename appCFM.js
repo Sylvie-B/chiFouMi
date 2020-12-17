@@ -9,8 +9,7 @@ let choiceU = document.getElementById('userChoice');
 let info = document.getElementById('info');
 
 // get display history
-let comptHist = document.getElementById('comptHist');
-let userHist = document.getElementById('userHist');
+let histDis = document.getElementById('histDis');
 
 // get display point
 let point = document.getElementById('point');
@@ -20,12 +19,10 @@ let score = 0;
 for(let i = 0 ; i < userItem.length ; i++){
     userItem[i].addEventListener('click', function (){
         choiceU.innerHTML = userItem[i].innerHTML;
-        // userHist.innerHTML = userItem[i].innerHTML;
+        // userHist.innerHTML =
         randomChoice(i);
         // display point
         point.innerHTML = score.toString();
-        // set history
-        let histGame = document.createElement('div');
 
 
     });
@@ -38,7 +35,13 @@ for(let i = 0 ; i < userItem.length ; i++){
 function randomChoice (u){
     let c = Math.round(Math.random() * (userItem.length-1));
     choiceC.innerHTML = userItem[c].innerHTML;
-    // comptHist.innerHTML = userItem[c].innerHTML;
+    // set history
+    let histGame = document.createElement('div');
+    histGame.style.display = "flex";
+    histGame.innerHTML = userItem[c].innerHTML + " " + userItem[u].innerHTML;
+    histDis.appendChild(histGame);
+
+    // comptHist.innerHTML =
     // test
     if (c === u){
         info.innerHTML = "Match nul";
